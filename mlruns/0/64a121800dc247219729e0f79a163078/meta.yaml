@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/KALYAN/Desktop/Flight%20Fare%20Prediction/mlruns/0/64a121800dc247219729e0f79a163078/artifacts
+end_time: 1770517014309
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 64a121800dc247219729e0f79a163078
+run_name: stately-stoat-623
+run_uuid: 64a121800dc247219729e0f79a163078
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1770517007255
+status: 4
+tags: []
+user_id: '91734'

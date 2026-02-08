@@ -2,8 +2,8 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# 👇 THIS IS THE CRITICAL LINE
-ENV PYTHONPATH=/app
+# Add src folder to Python path
+ENV PYTHONPATH=/app/src
 
 COPY . .
 

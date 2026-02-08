@@ -1,4 +1,7 @@
-from src.FlightPricePrediction.pipeline.Prediction_pipeline import CustomData,PredictPipeline
+from FlightPricePrediction.pipeline.Prediction_pipeline import (
+    CustomData,
+    PredictPipeline
+)
 
 from flask import Flask,request,render_template,jsonify
 

@@ -1,20 +1,16 @@
-# Base image
 FROM python:3.8-slim
 
-# Set working directory
 WORKDIR /app
 
-# Copy requirements first (better caching)
-COPY requirements.txt .
-
 # Install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy rest of the project
+# Copy project files
 COPY . .
 
-# Expose port (optional but good practice)
-EXPOSE 5000
+# Hugging Face requires port 7860
+EXPOSE 7860
 
-# Start app using Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app"]
+# Start Flask app with Gunicorn
+CMD ["gunicorn", "-b", "0.0.0.0:7860", "app:app"]

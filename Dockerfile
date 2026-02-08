@@ -2,10 +2,11 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# Copy everything
+# 👇 THIS IS THE CRITICAL LINE
+ENV PYTHONPATH=/app
+
 COPY . .
 
-# Install dependencies + your src package
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 

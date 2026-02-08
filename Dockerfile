@@ -2,15 +2,13 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy project files
+# Copy everything
 COPY . .
 
-# Hugging Face requires port 7860
+# Install dependencies + your src package
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
+
 EXPOSE 7860
 
-# Start Flask app with Gunicorn
-CMD ["gunicorn", "-b", "0.0.0.0:7860", "app:app"]
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:7860"]

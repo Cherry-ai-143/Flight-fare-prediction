@@ -2,11 +2,10 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-# Add src folder to Python path
-ENV PYTHONPATH=/app/src
-
+# Copy everything
 COPY . .
 
+# Install dependencies + your src package
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
